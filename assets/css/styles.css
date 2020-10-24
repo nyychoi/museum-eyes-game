@@ -1,0 +1,14 @@
+body {
+  font-family: john-doe, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #d9ac55;
+}
+
+h2 {
+  border: solid red;
+}
+
+.blue {
+  color: blue;
+}
