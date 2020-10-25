@@ -46,6 +46,17 @@ img {
   width: 100%;
 }
 
+.over {
+  opacity:1;
+  transition:opacity 1.5s linear;
+}
+
+.under {
+  visibility: hidden;
+  opacity:0;
+  transition:visibility 0s,opacity 1.5s linear;
+}
+
 .button {
   background-color: #d9ac55;
   display: block;
