@@ -8,4 +8,11 @@ $(document).ready(function(){
     cardCache = (cardCache + 1) % cardsArray.length;
     $('img').attr('src', `assets/images/card_${cardCache}.png`)
   });
+
+  $(".toggle").click(function(){
+    $(".instructions").toggle(1000);
+    $(this).text(function(i, text) {
+      return text === 'hide instructions' ? 'show instructions' : 'hide instructions';
+    });
+  })
 })
