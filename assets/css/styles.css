@@ -65,6 +65,19 @@ img {
   box-shadow: 0 2px #59503E;
   transform: translateY(2px);
 }
+
+.instructions-container {
+}
+
+.instructions {
+
+}
+
+.toggle {
+  float: right;
+  cursor:pointer
+}
+
 .card-container {
 }
 
