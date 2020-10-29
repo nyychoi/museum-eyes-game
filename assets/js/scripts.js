@@ -42,15 +42,13 @@ $(document).ready(() =>{
       .fadeIn(transitionSpeed)
   }
 
-    toggleButtonText = function() {
-      $button.text((text) => {
-          if (cardCache === cardNumber - 1) {
-            return 'start over';
-          } else {
-            return 'pick a card';
-          }
-      });
-    }
-
-
+  toggleButtonText = function() {
+    $button.text((text) => {
+      if (cardCache === cardNumber - 1) {
+        return 'start over';
+      } else {
+        return 'pick a card';
+      }
+    });
+  }
 })
