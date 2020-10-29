@@ -9,7 +9,6 @@ $(document).ready(function(){
     cardCache = (cardCache + 1) % cardsArray.length;
     if (clickCount === 0 ) $('img').toggle(500); clickCount++;
 
-
     $('img').attr('src', `assets/images/card_${cardCache}.png`)
   });
 
