@@ -6,11 +6,21 @@ $(document).ready(function(){
   let clickCount = 0
 
   $('.button').click(function() {
-    cardCache = (cardCache + 1) % cardsArray.length;
     if (clickCount === 0 ) $('img').toggle(500); clickCount++;
+    $(this).text(function(i, text) {
+
+      console.log(cardCache, cardsArray.length)
+        if (cardCache === cardsArray.length - 1) {
+          return 'start over';
+        } else {
+          return 'pick a card';
+        }
+    });
 
     $('img').attr('src', `assets/images/card_${cardCache}.png`)
+    cardCache = (cardCache + 1) % cardsArray.length;
   });
+  
 
   $(".toggle").click(function(){
     $(".instructions").toggle(1000);
