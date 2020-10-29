@@ -4,6 +4,7 @@ $(document).ready(function(){
   ]
   let cardCache = 0;
   let clickCount = 0
+  let $img;
 
   $('.button').click(function() {
     if (clickCount === 0 ) $('img').toggle(500); clickCount++;
@@ -17,7 +18,12 @@ $(document).ready(function(){
         }
     });
 
-    $('img').attr('src', `assets/images/card_${cardCache}.png`)
+    $img = $('img').detach()
+    $img.attr('src', `assets/images/card_${cardCache}.png`)
+        .css('display','none')
+        .appendTo('.card')
+        .show(2000)
+
     cardCache = (cardCache + 1) % cardsArray.length;
   });
   
