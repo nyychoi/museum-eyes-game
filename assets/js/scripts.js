@@ -1,17 +1,24 @@
 $(document).ready(function(){
-  const cardsArray = [
-    'card_1.png', 'card_2.png', 'card_3.png', 'card_4.png', 'card_5.png', 'card_6.png', 'card_7.png', 'card_8.png', 'card_9.png',
-  ]
+  const cardNumber = 10;
+  // [
+  //   'card_1.png', 'card_2.png', 'card_3.png', 'card_4.png', 'card_5.png', 'card_6.png', 'card_7.png', 'card_8.png', 'card_9.png',
+  // ]
   let cardCache = 0;
-  let clickCount = 0
+  let firstClick = true;
   let $img;
 
+
   $('.button').click(function() {
-    if (clickCount === 0 ) $('img').toggle(500); clickCount++;
+    if (firstClick === true ) {
+      $('img').toggle(1000); firstClick = false; 
+      cardCache = (cardCache + 1) % cardNumber;
+      return
+    }
+
     $(this).text(function(i, text) {
 
-      console.log(cardCache, cardsArray.length)
-        if (cardCache === cardsArray.length - 1) {
+      console.log(cardCache, cardNumber)
+        if (cardCache === cardNumber - 1) {
           return 'start over';
         } else {
           return 'pick a card';
@@ -22,9 +29,9 @@ $(document).ready(function(){
     $img.attr('src', `assets/images/card_${cardCache}.png`)
         .css('display','none')
         .appendTo('.card')
-        .show(2000)
+        .show(1500)
 
-    cardCache = (cardCache + 1) % cardsArray.length;
+    cardCache = (cardCache + 1) % cardNumber;
   });
   
 
