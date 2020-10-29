@@ -42,14 +42,15 @@ li {
 }
 
 img {
-  display: block;
+  display: none;
   width: 100%;
 }
 
 .button {
   background-color: #d9ac55;
   display: block;
-  width: 20%;
+  width: 7em;
+  padding: .2em;
   font-size: 1.5em;
   line-height: 1.5em;
   height: 1.5em;
