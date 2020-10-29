@@ -39,7 +39,7 @@ $(document).ready(() =>{
       .attr(`src`, `assets/images/card_${cardCache}.png`)
       .css(`display`,`none`)
       .appendTo(`.card`)
-      .show(transitionSpeed)
+      .fadeIn(transitionSpeed)
   }
 
     toggleButtonText = function() {
