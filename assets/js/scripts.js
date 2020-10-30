@@ -10,11 +10,12 @@ $(document).ready(() =>{
   let transitionBetweenCards;
   let toggleButtonText;
   let displayFirstCard;
+  let toggleInstructions
 
   $button.click(() => {
     if (firstClick === true ) {
       $(`img`).toggle(transitionSpeed); firstClick = false;
-      updateCardCache()
+      updateCardCache();
       return
     }
 
@@ -24,11 +25,15 @@ $(document).ready(() =>{
   });
 
   $toggle.click(() => {
+    toggleInstructions();
+  })
+
+  toggleInstructions = function() {
     $(`.instructions`).toggle(transitionSpeed);
     $toggle.text((i, text) => {
       return text === `hide instructions` ? `show instructions` : `hide instructions`;
     });
-  })
+  }
 
   updateCardCache = function() {
     cardCache = (cardCache + 1) % cardNumber;
@@ -43,6 +48,7 @@ $(document).ready(() =>{
   }
 
   toggleButtonText = function() {
+
     $button.text((text) => {
       if (cardCache === cardNumber - 1) {
         return 'start over';
