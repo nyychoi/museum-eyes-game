@@ -25,7 +25,7 @@ $(document).ready(() =>{
 
   $toggle.click(() => {
     $(`.instructions`).toggle(transitionSpeed);
-    $(this).text((i, text) => {
+    $toggle.text((i, text) => {
       return text === `hide instructions` ? `show instructions` : `hide instructions`;
     });
   })
