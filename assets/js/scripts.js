@@ -3,6 +3,7 @@ $(document).ready(() =>{
   let $button = $(`.button`);
   let $toggle = $(`.toggle`);
   let $img = $(`img`)
+  let $instructions = $(`.instructions`)
   let cardCache = 0;
   let firstClick = true;
   let transitionSpeed = 500;
@@ -17,7 +18,7 @@ $(document).ready(() =>{
     if (firstClick === true ) {
       $(`img`).toggle(transitionSpeed); firstClick = false;
       updateCardCache();
-      toggleInstructions();
+      if ($instructions.not(`:hidden`)) { toggleInstructions(); }
       return
     }
 
@@ -32,7 +33,7 @@ $(document).ready(() =>{
   })
 
   toggleInstructions = function() {
-    $(`.instructions`).toggle(transitionSpeed);
+    $instructions.toggle(transitionSpeed);
     $toggle.text((i, text) => {
       return text === `hide instructions` ? `show instructions` : `hide instructions`;
     });
