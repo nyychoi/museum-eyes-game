@@ -12,10 +12,12 @@ $(document).ready(() =>{
   let displayFirstCard;
   let toggleInstructions
 
-  $button.click(() => {
+  $button.click((e) => {
+    e.preventDefault();
     if (firstClick === true ) {
       $(`img`).toggle(transitionSpeed); firstClick = false;
       updateCardCache();
+      toggleInstructions();
       return
     }
 
@@ -24,7 +26,8 @@ $(document).ready(() =>{
     updateCardCache()
   });
 
-  $toggle.click(() => {
+  $toggle.click((e) => {
+    e.preventDefault();
     toggleInstructions();
   })
 
